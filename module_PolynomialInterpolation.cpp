@@ -15,6 +15,12 @@ PolynomialInterpolation::PolynomialInterpolation(uint16_t maxPoint)
 	mWorkingPoint = mMaxPoint;
 }
 
+PolynomialInterpolation::~PolynomialInterpolation(void)
+{
+	delete[] mValue;
+	delete[] mAdc;
+}
+
 void PolynomialInterpolation::setPoint(uint16_t num, float value, float adc)
 {
 	if(num < mMaxPoint)
